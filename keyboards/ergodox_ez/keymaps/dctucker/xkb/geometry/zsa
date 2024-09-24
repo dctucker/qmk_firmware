@@ -1,0 +1,351 @@
+default xkb_geometry "ergodox_ez" {
+
+    // This is an approximate layout for a Kinesis Ergonomic keyboard
+    // Generated completely by eye.  I didn't actually *measure* a real 
+    // keyboard.
+
+    description= "ZSA Ergodox EZ";
+    width= 381;
+    height= 185;
+
+    shape.cornerRadius= 1;
+    shape "NORM" { { [ 18,18] }, { [2,1], [16,17] } };
+    shape "GAP"  { { [  9, 1] }, { [2,1], [ 8, 2] } };
+    shape "WIDE" { { [ 27,18] }, { [2,1], [25,17] } };
+    shape "HALF" { { [ 18,27] }, { [2,1], [16,26] } };
+    shape "TALL" { { [ 18,37] }, { [2,1], [16,36] } };
+    shape "LED"  { cornerRadius= 1.5, { [ 3,  3] } };
+    shape "EDGE" { cornerRadius=5, { [ 381, 185 ] } };
+
+    outline "Edges" {
+	top= 0;
+	left= 0;
+	shape= "EDGE";
+    };
+
+    row.vertical= True;
+    row.top= 1;
+    key.gap= 0.5;
+
+    indicator.shape= "LED";
+    indicator.top= 20;
+    indicator.onColor= "green";
+    indicator.offColor= "green30";
+
+    section "LeftAlpha" {
+	top=  24;
+	left= 9;
+	row {
+	    top= 4;
+	    left= 2;
+	    key.shape= "WIDE";
+	    keys { <AE12>, <DELE>, <BKSP>, <LFSH> };
+	};
+	row {
+	    top=78;
+	    left=11;
+	    keys { <TLDE> };
+	};
+	row {
+	    top= 4;
+	    left= 30;
+	    keys { <AE01>, <AD01>, { <AC01>, color="grey20" }, <AB01>, <AC11> };
+	};
+	row {
+	    top= 2;
+	    left= 49;
+	    keys { <AE02>, <AD02>, { <AC02>, color="grey20" }, <AB02>, <CAPS> };
+	};
+	row {
+	    top= 1;
+	    left= 68;
+	    keys { <AE03>, <AD03>, { <AC03>, color="grey20" }, <AB03>, <LEFT> };
+	};
+	row {
+	    top= 2;
+	    left= 87;
+	    keys { <AE04>, <AD04>, { <AC04>, color="grey20" }, <AB04>, <RGHT> };
+	};
+	row {
+	    top= 3;
+	    left= 106;
+	    keys { <AE05>, <AD05>, <AC05>, <AB05> };
+	};
+	row {
+	    top= 3;
+	    left= 125;
+	    keys { <LEFT>, { <FN>, "HALF" }, { <HYPR>, "HALF" } };
+	};
+    }; // End of "LeftAlpha" section
+
+    indicator "NumLock"  { left= 318; };
+    indicator "Caps Lock" { left=323; };
+    indicator "Overlay"  { left= 347; };
+
+    section "RightAlpha" {
+	top= 24;
+	left= 231;
+	row {
+	    top= 3;
+	    left= 2;
+	    keys { <RGHT>, { <FN>, "HALF" }, { <HYPR>, "HALF" } };
+	};
+	row {
+	    top= 3;
+	    left= 21;
+	    keys { <AE06>, <AD06>, <AC06>, <AB06> };
+	};
+	row {
+	    top= 2;
+	    left= 40;
+	    keys { <AE07>, <AD07>, { <AC07>, color="grey20" }, <AB07>, <UP> };
+	};
+    	row {
+	    top= 1;
+	    left= 59;
+	    keys { <AE08>, <AD08>, { <AC08>, color="grey20" }, <AB08>, <DOWN> };
+	};
+	row {
+	    top= 2;
+	    left= 78;
+	    keys { <AE09>, <AD09>, { <AC09>, color="grey20" }, <AB09>, <AD11> };
+	};
+	row {
+	    top= 4;
+	    left= 97;
+	    keys { <AE10>, <AD10>, { <AC10>, color="grey20" }, <AB10>, <AD12> };
+	};
+	row {
+	    top= 4;
+	    left= 116;
+	    key.shape= "WIDE";
+	    keys { <AE11>, <BKSL>, <AC11>, <RTSH>, { <FN>, "NORM" } };
+	};
+	overlay "KPAD" {
+	    <AE07>=<NMLK>, <AE08>=<KPEQ>, <AE09>=<KPSL>, <AE10>=<KPMU>,
+	    <AD07>=<KP7>,  <AD08>=<KP8>,  <AD09>=<KP9>,  <AD10>=<KPSU>,
+	    <AC07>=<KP4>,  <AC08>=<KP5>, <AC09>=<KP6>,  <AC10>=<KPAD>,
+	    <AB07>=<KP1>,  <AB08>=<KP2>, <AB09>=<KP3>,  <AB10>=<KPEN>,
+	    <AE10>=<KPDL>, <AE11>=<KPEN>
+	};
+    }; // End of "RightAlpha" section
+
+    section "LeftEdit" {
+	top= 109;
+	left= 133;
+	angle= 20;
+	row.top= -18;
+	row {
+	    top=  1;
+	    left= 1;
+	    keys { { <SPCE>, "TALL" } };
+	};
+	row {
+	    left= 20;
+	    keys { <LALT>, { <DELE>, "TALL" } };
+	};
+	row {
+	    left= 39;
+	    keys { <LWIN>, <HOME>, <END> };
+	};
+    }; // End of "LeftEdit" section
+
+    section "RightEdit" {
+	top= 109;
+	left= 252;
+	angle= -20;
+	row.top= -18;
+	row {
+	    left= -57;
+	    keys { <LALT>, <PGUP>, <PGDN> };
+	};
+	row {
+	    left= -38;
+	    keys { <ESC>, { <TAB>, "TALL" } };
+	};
+	row {
+	    top=  1;
+	    left= -19;
+	    keys { { <RTRN>, "TALL" } };
+	};
+    }; // End of "RightEdit" section
+
+    alias <AC00> = <CAPS>;
+    alias <AA00> = <LCTL>;
+};
+
+xkb_geometry "ergodox_ez_dctucker" {
+
+    // This is an approximate layout for a Kinesis Ergonomic keyboard
+    // Generated completely by eye.  I didn't actually *measure* a real 
+    // keyboard.
+
+    description= "ZSA Ergodox EZ (dctucker keymap)";
+    width= 381;
+    height= 185;
+
+    shape.cornerRadius= 1;
+    shape "NORM" { { [ 18,18] }, { [2,1], [16,17] } };
+    shape "GAP"  { { [  9, 1] }, { [2,1], [ 8, 2] } };
+    shape "WIDE" { { [ 27,18] }, { [2,1], [25,17] } };
+    shape "HALF" { { [ 18,27] }, { [2,1], [16,26] } };
+    shape "TALL" { { [ 18,37] }, { [2,1], [16,36] } };
+    shape "LED"  { cornerRadius= 1.5, { [ 3,  3] } };
+    shape "EDGE" { cornerRadius=5, { [ 381, 185 ] } };
+
+    outline "Edges" {
+	top= 0;
+	left= 0;
+	shape= "EDGE";
+    };
+
+    row.vertical= True;
+    row.top= 1;
+    key.gap= 0.5;
+
+    indicator.shape= "LED";
+    indicator.top= 20;
+    indicator.onColor= "green";
+    indicator.offColor= "green30";
+
+    section "LeftAlpha" {
+	top=  24;
+	left= 9;
+	row {
+	    top= 4;
+	    left= 2;
+	    key.shape= "WIDE";
+	    keys { <TLDE>, <TAB>, <ESC>, <LFSH> };
+	};
+	row {
+	    top=78;
+	    left=11;
+	    keys { <DELE> };
+	};
+	row {
+	    top= 4;
+	    left= 30;
+	    keys { <AE01>, <AD01>, { <AC01>, color="grey20" }, <AB01>, <FK01> };
+	};
+	row {
+	    top= 2;
+	    left= 49;
+	    keys { <AE02>, <AD02>, { <AC02>, color="grey20" }, <AB08>, <KPAD> };
+	};
+	row {
+	    top= 1;
+	    left= 68;
+	    keys { <AE03>, <AD03>, { <AC03>, color="grey20" }, <AB02>, <LALT> };
+	};
+	row {
+	    top= 2;
+	    left= 87;
+	    keys { <AE04>, <AD04>, { <AC04>, color="grey20" }, <AB03>, <LWIN> };
+	};
+	row {
+	    top= 3;
+	    left= 106;
+	    keys { <AE05>, <AD05>, <AC05>, <AB04> };
+	};
+	row {
+	    top= 3;
+	    left= 125;
+	    keys { <AE06>, { <AE12>, "HALF" }, { <AB05>, "HALF" } };
+	};
+    }; // End of "LeftAlpha" section
+
+    indicator "NumLock"  { left= 314; };
+    indicator "Caps Lock" { left=319; };
+    indicator "Overlay"  { left= 324; };
+    section "RightAlpha" {
+	top= 24;
+	left= 231;
+	row {
+	    top= 3;
+	    left= 2;
+	    keys { <AE05>, { <BKSL>, "HALF" }, { <MOUS>, "HALF" } };
+	};
+	row {
+	    top= 3;
+	    left= 21;
+	    keys { <AE06>, <AD06>, <AC06>, <AB05> };
+	};
+	row {
+	    top= 2;
+	    left= 40;
+	    keys { <AE07>, <AD07>, { <AC07>, color="grey20" }, <AB06>, <RWIN> };
+	};
+    	row {
+	    top= 1;
+	    left= 59;
+	    keys { <AE08>, <AD08>, { <AC08>, color="grey20" }, <AB07>, <RALT> };
+	};
+	row {
+	    top= 2;
+	    left= 78;
+	    keys { <AE09>, <AD09>, { <AC09>, color="grey20" }, <AB09>, <KPSU> };
+	};
+	row {
+	    top= 4;
+	    left= 97;
+	    keys { <AE10>, <AD10>, { <AC10>, color="grey20" }, <AB10>, <AD11> };
+	};
+	row {
+	    top= 4;
+	    left= 116;
+	    key.shape= "WIDE";
+	    keys { <AE11>, <AC11>, <AC11>, <RTSH>, { <AD12>, "NORM" } };
+	};
+	overlay "KPAD" {
+	    <AE07>=<NMLK>, <AE08>=<KPEQ>, <AE09>=<KPSL>, <AE10>=<KPMU>,
+	    <AD07>=<KP7>,  <AD08>=<KP8>,  <AD09>=<KP9>,  <AD10>=<KPSU>,
+	    <AC07>=<KP4>,  <AC08>=<KP5>, <AC09>=<KP6>,  <AC10>=<KPAD>,
+	    <AB07>=<KP1>,  <AB08>=<KP2>, <AB09>=<KP3>,  <AB10>=<KPEN>,
+	    <AE10>=<KPDL>, <AE11>=<KPEN>
+	};
+    }; // End of "RightAlpha" section
+
+    section "LeftEdit" {
+	top= 109;
+	left= 133;
+	angle= 20;
+	row.top= -18;
+	row {
+	    top=  1;
+	    left= 1;
+	    keys { { <BKSP>, "TALL" } };
+	};
+	row {
+	    left= 20;
+	    keys { <HOME>, { <AE11>, "TALL" } };
+	};
+	row {
+	    left= 39;
+	    keys { <END>, <PGUP>, <PGDN> };
+	};
+    }; // End of "LeftEdit" section
+
+    section "RightEdit" {
+	top= 109;
+	left= 252;
+	angle= -20;
+	row.top= -18;
+	row {
+	    left= -57;
+	    keys { <LEFT>, <UP>, <DOWN> };
+	};
+	row {
+	    left= -38;
+	    keys { <RGHT>, { <RTRN>, "TALL" } };
+	};
+	row {
+	    top=  1;
+	    left= -19;
+	    keys { { <SPCE>, "TALL" } };
+	};
+    }; // End of "RightEdit" section
+
+    alias <AC00> = <CAPS>;
+    alias <AA00> = <LCTL>;
+};
+
