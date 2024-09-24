@@ -1,6 +1,7 @@
 # The dctucker ErgoDox EZ configuration
 
-![Layout Image](https://i.imgur.com/or0TZwy.png)
+![Layout image](https://github.com/user-attachments/assets/bc8bbd59-9d59-4cf7-9724-f58542b170af)
+
 [KLE link](http://www.keyboard-layout-editor.com/#/gists/5e6c1543175505b67e9bf442624d278a)
 
 This keymap is your average QWERTY layout, but with a few twists:
